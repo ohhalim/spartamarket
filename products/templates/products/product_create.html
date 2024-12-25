@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>상품 등록</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.title.label_tag }}
+    {{ form.title }}
+    {{ form.description.label_tag }}
+    {{ form.description }}
+    {{ form.image.label_tag }}
+    {{ form.image }}
+    {{ form.hashtags_str.label_tag }}
+    {{ form.hashtags_str }}
+    <small>해시태그는 쉼표(,)로 구분하여 입력해주세요</small>
+    <button type="submit">등록하기</button>
+</form>
+{% endblock %} 
