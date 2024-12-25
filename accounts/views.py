@@ -4,6 +4,7 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from .models import User
+from products.models import Product
 
 def signup_view(request):
     if request.method == "POST":
@@ -71,3 +72,19 @@ def follow_view(request, username):
         else:
             request.user.follows.add(target_user)
     return redirect('accounts:profile', username=username)
+
+
+@login_required
+def profile_products_view(request, username):
+    user = get_object_or_404(User, username=username)
+    products = Product.objects.filter(user=user)
+    return render(request, 'products/product_list.html', {'products': products, 'profile_user': user})
+
+
+@login_required
+def profile_like_view(request, username):
+    user = get_object_or_404(User, username=username)
+    products = Product.objects.filter(likes=user)
+    return render(request, 'products/product_list.html', {'products': products, 'profile_user': user})
+
+
