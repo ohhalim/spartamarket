@@ -27,8 +27,8 @@
 2. **가상 환경 설정**
 
     ```bash
-    python3 -m venv .venv
-    source .venv/bin/activate
+    python -m venv venv
+    source venv/bin/activate
     ```
 
 3. **필수 패키지 설치**
@@ -58,7 +58,7 @@
 
 7. **접속하기**
 
-    브라우저에서 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)에 접속합니다.
+    브라우저에서 [http://127.0.0.1:8000/](http://127.0.0.1:8000/products/)에 접속합니다.
 
 
 <br>
