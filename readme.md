@@ -37,13 +37,26 @@
     pip install -r requirements.txt
     ```
 
-4. **개발 서버 실행**
+4. **데이터베이스 마이그레이션**
+
+    ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+
+5. **슈퍼유저 생성**
+
+    ```bash
+    python manage.py createsuperuser
+    ```
+
+6. **개발 서버 실행**
 
     ```bash
     python manage.py runserver
     ```
 
-5. **접속하기**
+7. **접속하기**
 
     브라우저에서 [http://127.0.0.1:8000/products/](http://127.0.0.1:8000/products/)에 접속합니다.
 
